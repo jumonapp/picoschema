@@ -1,8 +1,0 @@
-go/
-public/
-.github/
-.prettierrc.yaml
-pnpm-lock.yaml
-docs/*
-docs-go/*
-genkit-tools/genkit-schema.json
