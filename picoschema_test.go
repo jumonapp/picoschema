@@ -59,11 +59,11 @@ func TestPicoschema(t *testing.T) {
 			// The tests use a schema field.
 			val = val.(map[string]any)["schema"]
 
-			schema, err := picoschemaToJSONSchema(val)
+			schema, err := ToJSONSchema(val)
 			if err != nil {
 				t.Fatal(err)
 			}
-			got, err := convertSchema(schema)
+			got, err := ConvertSchema(schema)
 			if err != nil {
 				t.Fatal(err)
 			}

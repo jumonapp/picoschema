@@ -25,10 +25,10 @@ import (
 	orderedmap "github.com/wk8/go-ordered-map/v2"
 )
 
-// picoschemaToJSONSchema turns picoschema input into a JSONSchema.
+// ToJSONSchema turns picoschema input into a JSONSchema.
 // The val parameter is the result of parsing YAML into an value of type any.
 // picoschema is loosely documented at docs/dotprompt.md.
-func picoschemaToJSONSchema(val any) (*jsonschema.Schema, error) {
+func ToJSONSchema(val any) (*jsonschema.Schema, error) {
 	if val == nil {
 		return nil, nil
 	}
@@ -270,8 +270,8 @@ func mapToJSONSchema(m map[string]any) (*jsonschema.Schema, error) {
 	return &ret, nil
 }
 
-// convertSchema marshals s to JSON, then unmarshals the result.
-func convertSchema(s *jsonschema.Schema) (any, error) {
+// ConvertSchema marshals s to JSON, then unmarshals the result.
+func ConvertSchema(s *jsonschema.Schema) (any, error) {
 	// JSON sorts maps but not slices.
 	// jsonschema slices are not sorted consistently.
 	sortSchemaSlices(s)
